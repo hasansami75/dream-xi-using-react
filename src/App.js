@@ -14,8 +14,12 @@ function App() {
   },[])
 
   const handleAddTeam = (players) => {
-    const newTeam = [...team, players];
-    setTeam(newTeam);
+    if(!team.includes(players)){
+    setTeam([...team, players]);
+    }
+    else{
+      alert('Please select only one player for Playing XI');
+    }
   }
   return (
     <div className="App">    
